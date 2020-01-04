@@ -1,0 +1,34 @@
+{
+	"name": "purrmannwebsolutions/link-handler-bundle",
+	"description": "This Symfony bundle will allow you to configure your links to symfony entities as easy as you could imagine.",
+	"keywords": ["Symfony", "link", "entity", "anchor", "view"],
+	"homepage": "https://github.com/kpurrmann/LinkHandlerBundle",
+	"type": "symfony-bundle",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Kevin Purrmann",
+			"email": "kevin@purrmann-websolutions.de"
+		}
+	],
+	"require": {
+		"php": "^7.1",
+		"symfony/framework-bundle": "^4.0",
+		"symfony/twig-bundle": "^4.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^5.7",
+		"php-coveralls/php-coveralls": "^2.0",
+		"liip/functional-test-bundle": "^3.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"PurrmannWebsolutions\\LinkHandlerBundle\\": ""
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"PurrmannWebsolutions\\Tests\\": "Tests/"
+		}
+	}
+}
