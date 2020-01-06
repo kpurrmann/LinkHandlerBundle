@@ -1,10 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Pw;
+namespace PurrmannWebsolutions\LinkHandlerBundle;
 
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class PurrmannWebsolutionsLinkHandlerBundle
+class PurrmannWebsolutionsLinkHandlerBundle extends Bundle
 {
 
 }

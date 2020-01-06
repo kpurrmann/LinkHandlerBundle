@@ -1,0 +1,9 @@
+pw_linkhandler:
+  entities:
+    PurrmannWebsolutions\LinkHandlerBundle\Tests\Fixtures\FixtureClass:
+      detail:
+        route: 'test_route'
+        methodParameters:
+          id: getInt
+        parameters:
+          test: 'test'
