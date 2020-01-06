@@ -34,7 +34,8 @@ class PurrmannWebsolutionsLinkHandlerExtension extends Extension
         $loader->load('services.yml');
 
         $defintion = $container->getDefinition(LinkHandlerExtension::class);
-        $defintion->setArgument('config', $config['entities']);
+        $defintion->setArgument('$config', $config['entities']);
+
     }
 
     public function getConfiguration(array $config, ContainerBuilder $container)
