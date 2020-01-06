@@ -4,8 +4,8 @@
         https://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="purrmannwebsolutions.linkhandler.twig.linkhandlerextension" class="PurrmannWebsolutions\LinkHandlerBundle\Twig\LinkHandlerExtension">
-            <argument key="config"></argument>
+        <service id="PurrmannWebsolutions\LinkHandlerBundle\Twig\LinkHandlerExtension">
+            <argument key="$config"></argument>
         </service>
     </services>
 </container>
