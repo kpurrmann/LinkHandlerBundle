@@ -1,4 +1,4 @@
 services:
   PurrmannWebsolutions\LinkHandlerBundle\Twig\LinkHandlerExtension:
     arguments:
-      $config: null
+      - $config: null
