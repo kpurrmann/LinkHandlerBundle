@@ -1,13 +1,23 @@
 <?php
+/**
+ * Copyright (C) 2020 PrinterCare - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ *
+ * @copyright 2020 PrinterCare
+ * @link       http://www.printer-care.de
+ *
+ */
+
 declare(strict_types=1);
 
 namespace PurrmannWebsolutions\LinkHandlerBundle\Twig;
 
-use Symfony\Bridge\Twig\Extension\RoutingExtension;
+use InvalidArgumentException;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
-use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 class LinkHandlerExtension extends AbstractExtension
 {
@@ -33,12 +43,12 @@ class LinkHandlerExtension extends AbstractExtension
 
     /**
      * getFunctions.
-     * @return array|\Twig\TwigFunction[]
+     * @return array|TwigFunction[]
      */
     public function getFunctions()
     {
         return [
-            new \Twig\TwigFunction('link', [$this, 'renderLink'])
+            new TwigFunction('linkhandler', [$this, 'renderLink'])
         ];
     }
 
@@ -87,7 +97,7 @@ class LinkHandlerExtension extends AbstractExtension
     protected function checkIfEntityIsObject($entity): void
     {
         if (!is_object($entity)) {
-            throw new \InvalidArgumentException(sprintf('"%s" is not an object.', $entity), 1578193038149);
+            throw new InvalidArgumentException(sprintf('"%s" is not an object.', $entity), 1578193038149);
         }
     }
 
@@ -98,7 +108,7 @@ class LinkHandlerExtension extends AbstractExtension
     protected function checkIfConfigurationIsGiven(string $class): void
     {
         if (!array_key_exists($class, $this->config)) {
-            throw new \InvalidArgumentException(sprintf('Configuration for "%s" not exists.', $class), 1578193266262);
+            throw new InvalidArgumentException(sprintf('Configuration for "%s" not exists.', $class), 1578193266262);
         }
     }
 
@@ -110,7 +120,7 @@ class LinkHandlerExtension extends AbstractExtension
     protected function checkIfMethodIsConfigured(string $method, string $class): void
     {
         if (!array_key_exists($method, $this->config[$class])) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 sprintf('No configuration found for entity "%s" and method "%s"', $class, $method), 1578243384389
             );
         }
@@ -124,7 +134,7 @@ class LinkHandlerExtension extends AbstractExtension
     protected function checkIfRouteIsConfigured(string $method, string $class): void
     {
         if (!array_key_exists('route', $this->config[$class][$method])) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 sprintf('No route defined for combination of entity "%s" and method "%s"', $class, $method),
                 1578193565503
             );
@@ -154,7 +164,7 @@ class LinkHandlerExtension extends AbstractExtension
     protected function checkIfParameterTypeIsAllowed($currentParameter): void
     {
         if (!(is_string($currentParameter) || is_int($currentParameter))) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 sprintf('Only string and integer values are allowed'),
                 1578194386278
             );

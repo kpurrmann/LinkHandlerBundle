@@ -1,4 +1,8 @@
 services:
   PurrmannWebsolutions\LinkHandlerBundle\Twig\LinkHandlerExtension:
+    autoconfigure: true
+    autowire: true
     arguments:
-      - $config: null
+      $config: null
+    tags:
+      - { name: twig.extension }

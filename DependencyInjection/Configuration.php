@@ -1,4 +1,13 @@
 <?php
+/**
+ * Copyright (C) 2020 PrinterCare - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ *
+ * @copyright 2020 PrinterCare
+ * @link       http://www.printer-care.de
+ *
+ */
 
 declare(strict_types=1);
 
@@ -11,7 +20,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
 
-    const CONFIGURATION_ROOT = 'pw_linkhander';
+    const CONFIGURATION_ROOT = 'purrmann_websolutions_link_handler';
 
     /**
      * @inheritDoc
