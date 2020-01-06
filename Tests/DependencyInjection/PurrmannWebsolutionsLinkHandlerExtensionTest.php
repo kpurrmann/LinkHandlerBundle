@@ -19,7 +19,7 @@ class PurrmannWebsolutionsLinkHandlerExtensionTest extends AbstractExtensionTest
         $config = Yaml::parse(file_get_contents(__DIR__ . '/../Fixtures/Configuration/config.yml'));
 
         $this->load($config['pw_linkhandler']);
-        $this->assertContainerBuilderHasService('purrmannwebsolutions.linkhandler.twig.linkhandlerextension');
+        $this->assertContainerBuilderHasService(LinkHandlerExtension::class);
     }
 
     /**

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PurrmannWebsolutions\LinkHandlerBundle\DependencyInjection;
 
+use PurrmannWebsolutions\LinkHandlerBundle\Twig\LinkHandlerExtension;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -31,7 +32,7 @@ class PurrmannWebsolutionsLinkHandlerExtension extends Extension
 
         $loader->load('services.xml');
 
-        $defintion = $container->getDefinition('purrmannwebsolutions.linkhandler.twig.linkhandlerextension');
+        $defintion = $container->getDefinition(LinkHandlerExtension::class);
         $defintion->setArgument('config', $config['entities']);
     }
 
